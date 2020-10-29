@@ -1,128 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/constraintLayout"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/koef1EditText"
-        android:layout_width="85dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/edit_text_style"
-        android:inputType="numberDecimal"
-        android:padding="9dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/koef2EditText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="10.85" />
+        <EditText
+            android:id="@+id/koef1EditText"
+            android:layout_width="65dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_style"
+            android:inputType="numberDecimal"
+            android:paddingStart="9dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/koef2EditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="10.85"
+            tools:ignore="RtlSymmetry" />
 
-    <EditText
-        android:id="@+id/koef2EditText"
-        android:layout_width="85dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/edit_text_style"
-        android:inputType="numberDecimal"
-        android:padding="9dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/koef1EditText"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="10.85" />
+        <EditText
+            android:id="@+id/koef2EditText"
+            android:layout_width="65dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_style"
+            android:inputType="numberDecimal"
+            android:paddingStart="9dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/koef1EditText"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="10.85"
+            tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
-        android:text="1"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:text="Koef. 1"
         android:textColor="#000"
-        app:layout_constraintEnd_toStartOf="@+id/koef1EditText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
-        android:text="2"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:text="Koef. 2"
         android:textColor="#000"
-        app:layout_constraintEnd_toStartOf="@+id/koef2EditText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/betEditText"
-        android:layout_width="85dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_text_style"
-        android:inputType="numberDecimal"
-        android:padding="9dp"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/koef1EditText"
-        tools:text="50.29" />
+        <EditText
+            android:id="@+id/betEditText"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edit_text_style"
+            android:inputType="numberDecimal"
+            android:paddingStart="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/koef1EditText"
+            tools:text="50.29"
+            tools:ignore="RtlSymmetry" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="54dp"
-        android:text="My Bet: "
-        android:textColor="#000"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="5dp"
+            android:text="Total Bet: "
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/betEditText"
+            app:layout_constraintTop_toBottomOf="@+id/koef1EditText" />
 
     <Button
         android:id="@+id/calculateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="22dp"
         android:background="@drawable/edit_text_style"
         android:text="Calculate"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/betEditText"
-        app:layout_constraintTop_toBottomOf="@+id/koef2EditText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/betEditText" />
 
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text=""
+        android:layout_marginTop="8dp"
         android:paddingStart="20dp"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/betEditText"
-        tools:layout_editor_absoluteX="90dp"
+        android:text=""
+        android:textColor="#000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetImg"
         tools:ignore="RtlSymmetry" />
 
     <ImageView
         android:id="@+id/resetImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/reset_img"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
-        android:src="@drawable/reset_img" />
+        app:layout_constraintTop_toBottomOf="@+id/calculateBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

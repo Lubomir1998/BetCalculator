@@ -99,6 +99,33 @@ class MainActivity : AppCompatActivity() {
             binding.resultTextView.text = ""
         }
 
+        binding.calculateBtn2.setOnClickListener {
+            if(binding.koef1FreeBetEditText.text.isNotEmpty() && binding.koef2FreeBetEditText.text.isNotEmpty() && binding.freeBetEditText.text.isNotEmpty()){
+                val koef1 = binding.koef1FreeBetEditText.text.toString().toFloat()
+                val koef2 = binding.koef2FreeBetEditText.text.toString().toFloat()
+                val freeBet = binding.freeBetEditText.text.toString().toFloat()
+
+                val chistaPechalba = koef1 * freeBet - freeBet
+                val sumForKoef2 = chistaPechalba / koef2
+
+                // print on the screen
+
+
+            }
+            else{
+                Snackbar.make(binding.constraintLayout, "All fileds must be filled!", Snackbar.LENGTH_SHORT).show()
+            }
+
+            hideKeyBoard()
+        }
+
+        binding.resetImg2.setOnClickListener {
+            binding.freeBetEditText.text.clear()
+            binding.koef1FreeBetEditText.text.clear()
+            binding.koef2FreeBetEditText.text.clear()
+            binding.result2TextView.text = ""
+        }
+
 
     }
 

@@ -105,10 +105,42 @@ class MainActivity : AppCompatActivity() {
                 val koef2 = binding.koef2FreeBetEditText.text.toString().toFloat()
                 val freeBet = binding.freeBetEditText.text.toString().toFloat()
 
-                val chistaPechalba = koef1 * freeBet - freeBet
-                val sumForKoef2 = chistaPechalba / koef2
+                val chistaPechalba = (koef1 * freeBet - freeBet).toBigDecimal().setScale(2, RoundingMode.FLOOR).toFloat()
+                val sumForKoef2 = (chistaPechalba / koef2).toBigDecimal().setScale(2, RoundingMode.FLOOR).toFloat()
+
+                val neto = (chistaPechalba - freeBet).toBigDecimal().setScale(2, RoundingMode.FLOOR).toFloat()
+
+                val profit = ((neto / freeBet) * 100).toBigDecimal().setScale(2, RoundingMode.FLOOR).toFloat()
 
                 // print on the screen
+                val builder = SpannableStringBuilder()
+
+                val result1 = "Profit: ${profit}% \n[1] $koef1 x "
+                val spannableString = SpannableString(result1)
+                builder.append(spannableString)
+
+                val colorSpan = ForegroundColorSpan(Color.GREEN)
+                val colorSpan2 = ForegroundColorSpan(Color.BLUE)
+
+                val result2 = "$freeBet"
+                val spannableString2 = SpannableString(result2)
+                spannableString2.setSpan(colorSpan, 0, result2.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                builder.append(spannableString2)
+
+                val result3 = " = $chistaPechalba \n[2] $koef2 x "
+                val spannableString3 = SpannableString(result3)
+                builder.append(spannableString3)
+
+                val result4 = "$sumForKoef2"
+                val spannableString4 = SpannableString(result4)
+                spannableString4.setSpan(colorSpan2, 0, result4.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                builder.append(spannableString4)
+
+                val result5 = " = $chistaPechalba \nNeto: $neto"
+                val spannableString5 = SpannableString(result5)
+                builder.append(spannableString5)
+
+                binding.result2TextView.setText(builder, TextView.BufferType.SPANNABLE)
 
 
             }
